@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>transformation tester</title>
+
+        <script src="infusion/src/webapp/lib/jquery/core/js/jquery.js"></script>
+        <script src="infusion/src/webapp/tests/lib/qunit/js/qunit.js"></script>
+        <script src="infusion/src/webapp/framework/core/js/Fluid.js"></script>
+        <script src="infusion/src/webapp/tests/test-core/jqUnit/js/jqUnit.js"></script>
+        <script src="infusion/src/webapp/framework/core/js/DataBinding.js"></script>
+        <script src="infusion/src/webapp/framework/core/js/ModelTransformations.js"></script>
+        <script src="infusion/src/webapp/framework/core/js/ModelTransformationUtils.js"></script>
+    
+
+        <style>
+            #preferences {
+                width: 80%;
+                height: 150px;
+            }
+            #transformationMap {
+                width: 80%;
+                height: 250px;
+            }
+            #resultArea {
+                width: 80%;
+                height: 400px;
+                background-color: #ddd;
+            }
+            #transformButton {
+                font-size: 24px;
+            }
+        </style>
+    </head>
+
+
+    <body id="body">
+        <h1>GPII transformation Tester</h1>
+        <h3>Input preferences:<h3>
+            <textarea id='preferences'></textarea>
+        <h3>transformation map:</h3>
+            <textarea id='transformationMap'></textarea>
+        <input type="button" value="transform" id="transformButton" />
+        <h3>result</h3>
+            <div id='resultArea'></div>
+    </body>
+
+    <script src="transformationTester.js"></script>
+
+</html>
