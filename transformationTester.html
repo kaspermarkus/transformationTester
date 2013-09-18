@@ -4,16 +4,22 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>transformation tester</title>
 
-        <script src="infusion/src/webapp/lib/jquery/core/js/jquery.js"></script>
-        <script src="infusion/src/webapp/tests/lib/qunit/js/qunit.js"></script>
-        <script src="infusion/src/webapp/framework/core/js/Fluid.js"></script>
-        <script src="infusion/src/webapp/tests/test-core/jqUnit/js/jqUnit.js"></script>
-        <script src="infusion/src/webapp/framework/core/js/DataBinding.js"></script>
-        <script src="infusion/src/webapp/framework/core/js/ModelTransformations.js"></script>
-        <script src="infusion/src/webapp/framework/core/js/ModelTransformationUtils.js"></script>
+        <script src="infusion/src/lib/jquery/core/js/jquery.js"></script>
+        <script src="infusion/src/tests/lib/qunit/js/qunit.js"></script>
+        <script src="infusion/src/framework/core/js/Fluid.js"></script>
+        <script src="infusion/src/tests/test-core/jqUnit/js/jqUnit.js"></script>
+        <script src="infusion/src/framework/core/js/DataBinding.js"></script>
+        <script src="infusion/src/framework/core/js/ModelTransformation.js"></script>
+        <script src="infusion/src/framework/core/js/ModelTransformationTransforms.js"></script>
     
-
+        <script src="infusion/src/framework/core/js/FluidDebugging.js"></script>
         <style>
+	    body {
+		background-color: #DEDEeF}
+	    textarea {
+	        margin-left: 40px;
+		display: block;
+	    } 
             #preferences {
                 width: 80%;
                 height: 150px;
@@ -25,24 +31,39 @@
             #resultArea {
                 width: 80%;
                 height: 400px;
-                background-color: #ddd;
             }
             #transformButton {
                 font-size: 24px;
+            }
+	    .error {
+		color: red;
+	    }
+	    .valid {
+		background-color: #e5ffe5;
             }
         </style>
     </head>
 
 
     <body id="body">
-        <h1>GPII transformation Tester</h1>
-        <h3>Input preferences:<h3>
-            <textarea id='preferences'></textarea>
+        <!-- <h1>GPII transformation Tester</h1> -->
+        <h3>Input preferences:</h3>
+            <textarea id='preferences'>{
+		    "hello": "world"
+	    }</textarea>
+	    <div id='preferences-error' class="error"></div>
         <h3>transformation map:</h3>
-            <textarea id='transformationMap'></textarea>
+            <textarea id='transformationMap'>
+	    {
+		    "goodbye": "hello"
+	    }</textarea>
+	    <div id='transformationMap-error' class="error"></div>
         <input type="button" value="transform" id="transformButton" />
-        <h3>result</h3>
-            <div id='resultArea'></div>
+        <div id="results">
+	    <h3>result</h3>
+	    <div id='resultArea-msg'></div>
+            <textarea id='resultArea' disabled></textarea>
+       </div>
     </body>
 
     <script src="transformationTester.js"></script>

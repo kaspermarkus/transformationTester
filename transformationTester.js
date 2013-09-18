@@ -15,12 +15,33 @@ var fluid = fluid || require("infusion");
 (function () {
     fluid.registerNamespace("gpii.tests.transformerTester");
 
+    gpii.tests.transformerTester.validateJSON = function (inputField, errorField) {
+        var val = $("#"+inputField).val();
+        try {
+	    val = $.parseJSON(val);
+	    $("#"+errorField).hide();
+	    $("#"+inputField).val(fluid.prettyPrintJSON(val)).addClass("valid");
+	    return val;
+        } catch (e) {
+	    $("#"+errorField).text("INVALID JSON - "+e).show();
+	    return false;
+        }
+    }
+
     $("#transformButton").click(function (e) {
-        var prefs = $("#preferences").val();
-        prefs = $.parseJSON(prefs);
-        var trans = $("#transformationMap").val();
-        trans = $.parseJSON(trans);
-        var output = fluid.model.transformWithRules(prefs, trans);
-        $("#resultArea").text(JSON.stringify(output));
+        var prefs = gpii.tests.transformerTester.validateJSON("preferences", "preferences-error");
+        var trans = gpii.tests.transformerTester.validateJSON("transformationMap", "transformationMap-error");
+        if (!prefs || !trans) {
+		$("#results").hide();
+		return;
+	}
+	
+	var output = fluid.model.transformWithRules(prefs, trans);
+        $("#resultArea").text(fluid.prettyPrintJSON(output));
+	$("#results").show();
+    }).click();
+
+    $("#transformationMap, #preferences").focus(function (evt) {
+        $(evt.target).removeClass();
     });
 }());
