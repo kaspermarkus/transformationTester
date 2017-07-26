@@ -1,1 +1,1 @@
-this requires infusion checked out into an infusion directory at root level
+Run `npm install` to pull down Infusion.

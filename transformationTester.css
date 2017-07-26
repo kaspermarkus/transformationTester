@@ -1,0 +1,35 @@
+body {
+    background-color: #DEDEeF
+}
+
+textarea {
+    margin-left: 40px;
+    display: block;
+}
+
+#preferences {
+    width: 80%;
+    height: 150px;
+}
+
+#transformationMap {
+    width: 80%;
+    height: 250px;
+}
+
+#resultArea {
+    width: 80%;
+    height: 400px;
+}
+
+#transformButton {
+    font-size: 24px;
+}
+
+.error {
+    color: red;
+}
+
+.valid {
+    background-color: #e5ffe5;
+}

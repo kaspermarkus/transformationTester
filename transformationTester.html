@@ -2,46 +2,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>transformation tester</title>
+        <link rel="stylesheet" type="text/css" href="transformationTester.css" />
+        <script src="node_modules/infusion/dist/infusion-all.js"></script>
 
-        <script src="infusion/src/lib/jquery/core/js/jquery.js"></script>
-        <script src="infusion/src/tests/lib/qunit/js/qunit.js"></script>
-        <script src="infusion/src/framework/core/js/Fluid.js"></script>
-        <script src="infusion/src/tests/test-core/jqUnit/js/jqUnit.js"></script>
-        <script src="infusion/src/framework/core/js/DataBinding.js"></script>
-        <script src="infusion/src/framework/core/js/ModelTransformation.js"></script>
-        <script src="infusion/src/framework/core/js/ModelTransformationTransforms.js"></script>
-    
-        <script src="infusion/src/framework/core/js/FluidDebugging.js"></script>
-        <style>
-	    body {
-		background-color: #DEDEeF}
-	    textarea {
-	        margin-left: 40px;
-		display: block;
-	    } 
-            #preferences {
-                width: 80%;
-                height: 150px;
-            }
-            #transformationMap {
-                width: 80%;
-                height: 250px;
-            }
-            #resultArea {
-                width: 80%;
-                height: 400px;
-            }
-            #transformButton {
-                font-size: 24px;
-            }
-	    .error {
-		color: red;
-	    }
-	    .valid {
-		background-color: #e5ffe5;
-            }
-        </style>
+        <title>transformation tester</title>
     </head>
 
 
@@ -49,19 +13,19 @@
         <!-- <h1>GPII transformation Tester</h1> -->
         <h3>Input preferences:</h3>
             <textarea id='preferences'>{
-		    "hello": "world"
-	    }</textarea>
-	    <div id='preferences-error' class="error"></div>
+            "hello": "world"
+        }</textarea>
+        <div id='preferences-error' class="error"></div>
         <h3>transformation map:</h3>
             <textarea id='transformationMap'>
-	    {
-		    "goodbye": "hello"
-	    }</textarea>
-	    <div id='transformationMap-error' class="error"></div>
+        {
+            "goodbye": "hello"
+        }</textarea>
+        <div id='transformationMap-error' class="error"></div>
         <input type="button" value="transform" id="transformButton" />
         <div id="results">
-	    <h3>result</h3>
-	    <div id='resultArea-msg'></div>
+        <h3>result</h3>
+        <div id='resultArea-msg'></div>
             <textarea id='resultArea' disabled></textarea>
        </div>
     </body>
