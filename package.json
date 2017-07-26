@@ -1,0 +1,24 @@
+{
+    "name": "transformationTester",
+    "description": "A web interface for testing Fluid Infusion model transformations",
+    "version": "1.0.0",
+    "author": "Kasper Markus",
+    "bugs": "https://github.com/kaspermarkus/transformationTester/issues",
+    "license": "",
+    "keywords": [
+        "web",
+        "test",
+        "model",
+        "transformation",
+        "Fluid Infusion",
+        "Infusion"
+    ],
+    "repository": "git://github.com/kaspermarkus/transformationTester.git",
+    "main": "transformationTester.html",
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "dependencies": {
+        "infusion": "3.0.0-dev.20170711T203443Z.1c59e6068"
+    }
+}
